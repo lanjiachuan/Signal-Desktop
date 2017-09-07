@@ -133,6 +133,10 @@
         var VERIFIED = this.verifiedEnum.VERIFIED;
         var UNVERIFIED = this.verifiedEnum.UNVERIFIED;
 
+        if (this.isMe()) {
+            return;
+        }
+
         if (!this.isPrivate()) {
             throw new Error('You cannot verify a group conversation. ' +
                             'You must verify individual contacts.');
